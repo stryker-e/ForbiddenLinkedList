@@ -18,7 +18,8 @@ class Burger {                 //node in Linked List
 template <typename T>
 void Burger<T>::initBurger(T newPatty)
 {
-    this->patty = 
+    this->patty = newPatty;
+    this->cheese = NULL;
 
 }
 
