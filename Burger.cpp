@@ -8,7 +8,7 @@ class Burger {                 //node in Linked List
         Burger<T>* cheese;      //pointer to next Burger node
 
     public:
-        void initBurger(T newPatty)
+        void initBurger(T newPatty);
         void setPatty(T newPatty);
         void setCheese(Burger<T> *newCheese);
         T getPatty();
