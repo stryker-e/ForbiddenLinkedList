@@ -8,42 +8,34 @@ class Burger {                 //node in Linked List
         Burger<T>* cheese;      //pointer to next Burger node
 
     public:
-        void initBurger(T newPatty)
-        void setPatty(T newPatty);
-        void setCheese(Burger<T> *newCheese);
-        T getPatty();
-        Burger<T> *getCheese();
+        Burger<T>()
+        {
+            this->patty = NULL;
+            this->cheese = NULL;
+        }
+
+        Burger<T>(T newPatty)
+        {
+            this->patty = newPatty;
+            this->cheese = NULL;
+
+        }
+        void Burger<T>::setPatty(T newPatty)
+        {
+            this->patty = newPatty;
+        }
+        void Burger<T>::setCheese(Burger<T> *newCheese)
+        {
+            this->cheese = newCheese;
+        }
+        T Burger<T>::getPatty()
+        {
+            return this->patty;
+        }
+
+        Burger<T> * Burger<T>::getCheese()
+        {
+            return this->cheese;
+        }
+
 };
-
-template <typename T>
-void Burger<T>::initBurger(T newPatty)
-{
-    this->patty = newPatty;
-    this->cheese = NULL;
-
-}
-
-template <typename T>
-void Burger<T>::setPatty(T newPatty)
-{
-    this->patty = newPatty;
-}
-
-template <typename T>
-void Burger<T>::setCheese(Burger<T> *newCheese)
-{
-    this->cheese = newCheese;
-}
-
-template <typename T>
-T Burger<T>::getPatty()
-{
-    return this->patty;
-}
-
-template <typename T>
-Burger<T> * Burger<T>::getCheese()
-{
-    return this->cheese;
-}
-
