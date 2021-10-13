@@ -109,17 +109,4 @@ class BurgerLinkedList {
 
             return true;
         }*/
-
-
-
-
-
-
-
-
-
-
-
-
-
 };
