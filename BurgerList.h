@@ -20,6 +20,7 @@ class BurgerList {
 
         //util
         bool isEmpty();
+        void printList();
         
 
     private:
@@ -43,7 +44,24 @@ BurgerList<T>::BurgerList<T>() {
 //TODO
 template <typename T>
 bool BurgerList<T>::isEmpty() {
-    if(size_t == 0)
+    return (size_t == 0);
+}
+
+template <typename T>
+void BurgerList<T>::printList() {
+    if(this.isEmpty())
+    {
+        std::cout << "List is empty.\n";
+    }
+    else
+    {
+        auto temp = topBun;
+        int count = 0;
+        while(temp)
+        {
+            std::cout << "Node " << count << ": " << temp->value << "\n";
+        }
+    }
 }
 
 //insert at tail
@@ -66,7 +84,28 @@ bool BurgerList<T>::push_back(T key) {
 //remove at tail
 template <typename T>
 bool BurgerList<T>::pop_back() {
+    if(topBun->link == nullptr)
+    {
+        delete topBun;
+        topBun = NULL;
+        size = 0;
+    }
+    else
+    {
+        BurgerNode<T> *temp = topBun;
+        BurgerNode<T> *prev = new BurgerNode<T>();
 
+        while(temp->link != nullptr)
+        {
+            prev = temp;
+            temp = temp->link;
+        }   
+        prev->link = nullptr;
+        bottomBun = prev;
+        delete temp;
+        size--;
+        return true;
+    }
 
 }
 
