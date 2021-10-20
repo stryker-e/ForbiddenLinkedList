@@ -5,12 +5,13 @@
 #include <iostream>
 
 template <typename T>
+
 class BurgerList {
 
     public:
         //constructors
-        BurgerList<T>();
-        ~BurgerList<T>();
+        BurgerList(T key_, BurgerNode<T> *link_);
+        ~BurgerList();
 
         //modifiers
         bool push_back(T key);
@@ -30,9 +31,9 @@ class BurgerList {
 };
 
 template <typename T>
-BurgerList<T>::BurgerList<T>() {
-    auto *t_head = BurgerNode<T>();
-    auto *t_tail = BurgerNode<T>();
+BurgerList<T>::BurgerList(T key_, BurgerNode<T> *link_) {
+    BurgerNode<T> *t_head = BurgerNode<T>();
+    BurgerNode<T> *t_tail = BurgerNode<T>();
 
     topBun = t_head;
     bottomBun = t_tail;

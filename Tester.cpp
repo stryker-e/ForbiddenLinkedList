@@ -7,7 +7,7 @@ int main()
 {
     int key = 0;
     bool rt = true;
-    auto list = new BurgerList<int>();
+    auto list = new BurgerList<int>(key = 5, new BurgerNode<int>());
     key = 5;
     rt = list->BurgerList<int>::push_back(key);
     key = 10;
